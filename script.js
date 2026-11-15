@@ -30,10 +30,10 @@ bookingForm.addEventListener('submit', function(event) {
     const dance = document.querySelector('#dance').value;
     const message = document.querySelector('#formMessage');
     if (name ==='' || email === '' || dance === '') {
-        message.textContent = 'Заповніть усі поля!ʼ;
+        message.textContent = 'Заповніть усі поля!';
         message.style.color = 'red';
     } else {
-        message.textContent = 'Ваша заявка успішно надіслана!ʼ;
+        message.textContent = 'Ваша заявка успішно надіслана!';
         message.style.color = 'green';
         bookingForm.reset();
     }
