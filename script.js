@@ -21,3 +21,19 @@ filterButtons.forEach(button => {
           });
      });
 });
+const bookingForm = document.querySelector('#bookingForm');
+bookingForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.querySelector('#name').value.trim();
+    const email = document.querySelector('#email').value.trim();
+    const dance = document.querySelector('#dance').value;
+    const message = document,querySelector('#formMessage');
+    if (name ==='' || email === '' || dance === '') {
+        message.textContent = 'Заповніть усі поля!ʼ;
+        message,style.color = 'red';
+    } else {
+        message.textContent = 'Ваша заявка успішно надіслана!ʼ;
+        message.style.color = 'green';
+        bookingForm.reset();
+    }
+});
