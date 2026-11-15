@@ -65,6 +65,24 @@
             </p>
             <a href="#contacts" class="button">Записатися</a>
         </section>
+        <section id="booking">
+            <h2>Записатися на тренування</h2>
+            <form id="bookingForm">
+                <label for="name">Ваше імʼя:</label>
+                <input type="text" id="name" required>
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" required>
+                <label for="dance">Оберіть напрям:</label>
+                <select id="dance" required>
+                    <option value="">Оберіть напрям</option>
+                    <option value="modern">Сучасні танці</option>
+                    <option value="classic">Класичгі танці</option>
+                    <option value="hiphop">Hip-Hop</option>
+                </select>
+                <button type="submit">Надіслати заявку</button>
+                <p id="formMessage"></p>
+            </form>
+        </section>
         <section id="contacts">
             <h2>Контакти</h2>
             <p>Ми чекаємо на тебе у Dance Studio!</p>
