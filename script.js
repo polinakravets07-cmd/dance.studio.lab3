@@ -8,6 +8,7 @@ nav.Links.forEach(link => {
         });
 });
 const filterButtons = document.querySelectorAll('.filters button');
+console.log(filterButtons.length);
 const danceCards = document.querySelectorAll('.card');
 filterButtons.forEach(button => {
     button.addEventListener('click', function() {
