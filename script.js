@@ -8,17 +8,13 @@ navLinks.forEach(link => {
         });
 });
 const filterButtons = document.querySelectorAll('.filters button');
-console.log(filterButtons.length);
 const danceCards = document.querySelectorAll('.card');
 filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const filter = this.dataset.filter;
+    button.addEventListener('click', () => {
+        const selectedCategory = button.getAttribute('data-filter');
         danceCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            const cardCategory = card.getAttribute('data-category');
+            card.hidden = !(selectedCategory === 'all' || selectedCategory === cardCategory);
           });
      });
 });
