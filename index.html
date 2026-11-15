@@ -31,16 +31,22 @@
         </section>
         <section id="styles">
             <h2>Нашу напрямки</h2>
+            <div class="filters">
+                <button type="button" data-filter="all">Усі</button>
+                <button type="button" data-filter="modern">Сучасні танці</button>
+                <button type="button" data-filter="classic">Класичний танець</button>
+                <button type="button" data-filter="hiphop">Hip-Hop</button>
+            </div>
             <div class="cards">
-                <article class="card">
+                <article class="card" data-category="modern">
                     <h3>Сучасні танці</h3>
                     <p>Енергійні рухи та сучасна хореографія.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-category="classic">
                     <h3>Класичний танець</h3>
                     <p>Грація, пластика та правильна постава.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-category="hiphop">
                     <h3>Hip-Hop</h3>
                     <p>Ритм, свобода та яскраві рухи.</p>
                 </article>
