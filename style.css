@@ -139,3 +139,22 @@ nav a.active {
 .filters button:hover {
     background-color: #b8cfaa;
 }
+#bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+#bookingForm input,
+#bookingForm select {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+#bookingForm button {
+    padding: 12pxn
+    background-color: #dce8d5;
+    border: none;
+    cursor: pointer;
+}
