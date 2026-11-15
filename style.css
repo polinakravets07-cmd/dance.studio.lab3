@@ -104,7 +104,7 @@ nav a:hover {
         margin: 5px;
     }
     .hero {
-        pading: 45px 15px;
+        padding: 45px 15px;
     }
     .hero h2 {
         font-size: 30px;
@@ -116,4 +116,10 @@ nav a:hover {
         width: 100%;
         max-width: 359px;
     }
+}
+nav a.active {
+    color: #ffffff
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
