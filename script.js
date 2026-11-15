@@ -1,6 +1,6 @@
 const navLinks = document.querySelectorAll('nav a');
-nav.Links.forEach(link => {
-     links.addEventListener('click', function() {
+navLinks.forEach(link => {
+     link.addEventListener('click', function() {
           navLinks.forEach(item => {
               item.classList.remove('active');
             });
@@ -28,10 +28,10 @@ bookingForm.addEventListener('submit', function(event) {
     const name = document.querySelector('#name').value.trim();
     const email = document.querySelector('#email').value.trim();
     const dance = document.querySelector('#dance').value;
-    const message = document,querySelector('#formMessage');
+    const message = document.querySelector('#formMessage');
     if (name ==='' || email === '' || dance === '') {
         message.textContent = 'Заповніть усі поля!ʼ;
-        message,style.color = 'red';
+        message.style.color = 'red';
     } else {
         message.textContent = 'Ваша заявка успішно надіслана!ʼ;
         message.style.color = 'green';
