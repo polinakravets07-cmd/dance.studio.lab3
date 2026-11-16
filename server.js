@@ -19,6 +19,12 @@ app.get('/api/bookings', (req, res) => {
 });
 app.post('/api/bookings', (req, res) => {
     const { name, email, dance_style } = req.body;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        return res.status(400).json({
+            error: 'Введіть коректну електронну пошту!'
+        });
+    }
     if (!name || !email || !dance_style) {
         return res.status(400).json({
             error: 'Заповніть усі поля!'
