@@ -19,7 +19,7 @@ filterButtons.forEach(button => {
      });
 });
 const bookingForm = document.querySelector('#bookingForm');
-bookingForm.addEventListener('submit', function(event) {
+bookingForm.addEventListener('submit', async function(event) {
     event.preventDefault();
     const name = document.querySelector('#name').value.trim();
     const email = document.querySelector('#email').value.trim();
@@ -28,9 +28,29 @@ bookingForm.addEventListener('submit', function(event) {
     if (name ==='' || email === '' || dance === '') {
         message.textContent = 'Заповніть усі поля!';
         message.style.color = 'red';
-    } else {
-        message.textContent = 'Ваша заявка успішно надіслана!';
-        message.style.color = 'green';
-        bookingForm.reset();
+        return;
     }
+    try {
+        const response = await fetch('/api/bookings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                dance_style: dance
+        })
+    });
+    const result = await response.json();
+    if (!response.ok) {
+        throw new Error(result.error || 'Помилка відправлення');
+    }
+    message.textContent = 'Ваша заявка успішно надіслана!';
+    message.style.color = 'green';
+    bookingForm.requestFullscreen();
+  } catch (error ) {
+    message.textContent = 'Не вдалося надіслати зявку. Спробуйте пезніше.';
+    message.style.color = 'red';
+  }
 });
